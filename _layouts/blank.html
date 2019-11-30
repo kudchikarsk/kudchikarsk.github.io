@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="{{ site.encoding }}">
+<meta name="author" content="{% if page.author %}{{ page.author }}{% else %}{{ site.author }}{% endif %}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<title>{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}</title>
+
+<meta property="og:title" content="{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}" /> 
+<meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+<meta property="og:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}{{ site.image }}{% endif %}" />
+<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"/>
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@kudchikarsk">
+<meta name="twitter:creator" content="@kudchikarsk">
+<meta name="twitter:title" content="{% if page.title %} {{ page.title }} › {% endif %}{{ site.title }}">
+<meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+<meta name="twitter:image" content="{% if page.image %}{{ site.url }}{{ page.image }}{% else %}{{ site.url }}{{ site.image }}{% endif %}">
+
+<meta name="msvalidate.01" content="289F3B5D6E683DFF92DFEFD873D3ECD0" />
+				
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-114994933-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-114994933-1');
+</script>
+
+<!-- Autotrack Installation -->
+<script>
+window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+ga('create', 'UA-114994933-5', 'auto');
+
+// Replace the following lines with the plugins you want to use.
+ga('require', 'eventTracker');
+ga('require', 'outboundLinkTracker');
+// ...
+
+ga('send', 'pageview');
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+<script async src="/scripts/autotrack.js"></script>
+
+<!-- content -->
+<link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url}}">
+<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,300italic,400italic" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="{{ '/basic.css' | prepend: site.baseurl }}" rel="stylesheet">
+<link href="{{ '/highlight.css' | prepend: site.baseurl }}" rel="stylesheet">
+<link href="{{ '/index.css' | prepend: site.baseurl }}" rel="stylesheet">
+{% feed_meta %}
+{% if site.comments.disqus and page.comments %}<script src="//{{ site.comments.disqus }}.disqus.com/embed.js" async></script>{% endif %}
+{% if site.comments.isso and page.comments %}<script data-isso="http://{{ site.comments.isso }}" src="//{{ site.comments.isso }}/js/embed.min.js"></script>{% endif %}
+{% if page.angular %}
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+{% endif %}
+<script type="text/javascript" src="/scripts/site.js"></script>
+</head>
+<body>
+  <div class="topnav" id="myTopnav">
+    {% for path in site.navigation %}{% assign node = site.pages | where: "path", path | first %}<a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>{% endfor %}
+      {% for dropdown in site.dropdowns %}
+  <div class="dropdown">
+    <button class="dropbtn">{{ dropdown.title }}
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+       {% for path in dropdown.navigation %}{% assign node = site.pages | where: "path", path | first %}<a href="{{ node.url | prepend: site.baseurl }}">{{ node.title }}</a>{% endfor %}        
+    </div>
+  </div> 
+   {% endfor %}
+  <a href="javascript:void(0);" style="font-size:17px;" class="icon" onclick="myFunction()"><i class="fa fa-bars"></i></a>
+  <div class='site-links'>{% for link_hash in site.links %}{% for link in link_hash %}<a href="{{ link[1] }}"><i class="fa fa-{{ link[0] }}"></i></a>{% endfor %}{% endfor %}</div>
+</div>
+
+{{ content }}
+{% if page.previous.url or page.next.url %}
+<footer>
+    {% if page.next.url %}<a href="{{ page.next.url | prepend: site.baseurl }}">« {{ page.next.title }}</a>{% else %} <span></span> {% endif %}
+    {% if page.previous.url %}<a href="{{ page.previous.url | prepend: site.baseurl }}">{{ page.previous.title }} »</a>{% else %} <span></span> {% endif %}
+</footer>
+{% endif %}
+
+{% if page.course %}
+  <footer>
+  {% assign articles = site.courses[page.course] %}
+  {% for article in articles %}
+    {% if article.title == page.title %}
+      {% assign currIndex = forloop.index0 %}
+      {% assign prevIndex = currIndex | minus: 1 %}
+      {% assign nextIndex = currIndex | plus: 1 %}
+      {% assign articleIndexLength = forloop.length | minus: 1 %}
+     
+        {% if currIndex == 0 %}
+          <span></span> <a href="{{ articles[nextIndex].url | prepend: site.baseurl }}">{{ articles[nextIndex].title }} &raquo;</a>
+        {% elsif currIndex < articleIndexLength and currIndex != 0 %}
+          <a href="{{ articles[prevIndex].url | prepend: site.baseurl }}">&laquo; {{ articles[prevIndex].title }}</a>
+          <a href="{{ articles[nextIndex].url | prepend: site.baseurl }}">{{ articles[nextIndex].title }} &raquo;</a>
+        {% elsif currIndex == articleIndexLength %}
+          <a href="{{ articles[prevIndex].url | prepend: site.baseurl }}">&laquo; {{ articles[prevIndex].title }}</a> <span></span>
+        {% endif %}
+     
+    {% endif %}
+  {% endfor %}
+  </footer>
+{% endif %}
+
+<!-- Google custom ads -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+<!-- Auto ads - Google Adsense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-8889935351248544",
+          enable_page_level_ads: true
+     });
+</script>
+
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+---
+title: "C# Tutorial"
+permalink: /csharp-tutorial/
+image: '/assets/img/tutorials.png'
+description: "C# Tutorial - Learn C# in simple and easy steps starting from basic to advanced concepts with examples"
+layout: content
+redirect_from: "/tutorials/"
+aside: csharp_tutorial_aside.html
+author: shadman_kudchikar
+comments: true
+---
+
+<main>
+	<article>		
+		<header><h1>C# Tutorial</h1></header>
+		<p>
+			C# is widely used programming language in .NET framework. The goal of this tutorial is to take you from having little to no experience with C# to understanding how to leverage the language's advanced features and how it works on the CLR and .NET framework.
+		</p>		
+		<h2>What is C#?</h2>
+		<p>
+			C# is a powerful and flexible programming language. Like all programming languages, it can be used to create a variety of applications. Your potential with C# is limited only by your imagination. The language does not place constraints on what you can do. C# has already been used for projects as diverse as dynamic Web sites, development tools, and even compilers.
+		</p>
+		<p>
+			C# was created by a team of people at Microsoft led by Anders Hejlsberg . Interestingly, Hejlsberg is a Microsoft Distinguished Engineer who has created other products and languages, including Borland Turbo C++ and Borland Delphi. With C#, they focused on taking what was right about existing languages and adding improvements to make something better.
+		</p>		
+		<p>The term is sometimes spelled as C Sharp or C-Sharp.</p>
+
+		<h2>C# Articles</h2>
+		<p>
+			This page will provide you a series of articles to learn concepts of C# that are designed for beginners and professionals.
+		</p>
+		<ul>
+		 	{% for article in site.tutorials[0].courses %}
+		<li>
+			
+			<p>
+				<h3 style="display: inline;">
+					<a href="{{ article.url}}">
+			       		{{ article.name }}
+			    	</a>
+				</h3>
+				-
+				{{ article.description }}
+
+				{% if article.course %}
+				{% assign courses = article.course | split: ',' %}
+					<ul>
+					{% for course in courses %}		
+				  		{% for item in site.courses[course] %} 
+				  			{% assign currIndex = forloop.index0 %}	
+				  			{% if currIndex != 0 %} 					  					
+			  				<li>
+			  					<p>
+			  						<h4 style="display: inline;">
+			  							<a href="{{ item.url }}">{{ item.title }}</a>	
+			  						</h4>
+			  						-
+									{{ item.description }}
+			  					</p>
+			  				</li>  	
+				  			{% endif %}
+						{% endfor %}		
+					{% endfor %}
+					</ul>	 
+				{% endif %} 
+			</p>
+		</li>
+		    {% endfor %}      
+		</ul>
+		
+		{% include author_bio.html %}
+		
+		{% if site.comments.isso and page.comments %}
+    <hr><div id="isso-thread"></div>
+    {% endif %}
+    {% if site.comments.disqus and page.comments %}
+    <hr><div id="disqus_thread"></div>
+    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    {% endif %}
+	</article>
+</main>

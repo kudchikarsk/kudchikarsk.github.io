@@ -1,0 +1,34 @@
+<ul class="lessons-heading">
+	<li class="title">
+		<a href="/csharp-tutorial/" class="{% if page.url == '/csharp-tutorial/' %}selected{% endif %}">C# Tutorial</a>
+		
+	</li>
+</ul>
+<ul class="lessons">
+	
+		 	{% for article in site.tutorials[0].courses %}
+		<li >			
+			<a href="{{ article.url}}" class="{% if page.url == article.url %}selected{% endif %}">
+			       		{{ article.name }}
+			    	</a>
+
+				{% if article.course %}
+				{% assign courses = article.course | split: ',' %}
+					<ul>
+					{% for course in courses %}		
+				  		{% for item in site.courses[course] %} 
+				  			{% assign currIndex = forloop.index0 %}	
+				  			{% if currIndex != 0 %}					  					
+			  				<li >
+			  					<a href="{{ item.url }}" class="{% if page.url == item.url %}selected{% endif %}">{{ item.title }}</a>	
+			  				</li>  	
+				  			{% endif %}
+						{% endfor %}		
+					{% endfor %}
+					</ul>	 
+				{% endif %} 
+			
+		</li>
+		    {% endfor %}      
+		</ul>
+{% include default_aside.html %}

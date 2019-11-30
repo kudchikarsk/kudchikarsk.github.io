@@ -1,0 +1,239 @@
+title: "Shadman Kudchikar"
+author: "Shadman Kudchikar"
+description: "Easy-to-understand tutorials on the .NET stack with C# language."
+more: "read more »"
+url: "https://kudchikarsk.com"
+baseurl: ""
+paginate: 4
+permalink: /:title/
+excerpt_separator: <!--more-->
+image: /images/programming2.jpg
+
+style:
+  minimalist: false
+  dark: false
+
+navigation:
+  - index.html
+  - csharp-tutorial.html
+  - archive.html
+  - about/index.html
+
+dropdowns:
+  - title: Tools
+    navigation:
+      - machine-key-generator.md
+
+comments:
+  disqus: "kudchikarsk-github-io"
+#  isso: "comments.mysite.org"
+
+links: # see http://fontawesome.io/icons/#brand for all possible icons
+  - twitter: "https://twitter.com/kudchikarsk/"
+  - github: "https://github.com/kudchikarsk"
+  - envelope: "mailto:kudchikarsk@gmail.com"
+
+defaults: 
+  - scope:
+      path: ""
+    values: 
+      layout: "default" 
+  - scope: 
+      path: "" 
+      type: "posts"
+    values: 
+      comments: true 
+  - scope: 
+      path: "page2"
+    values: 
+      sitemap: false 
+  - scope: 
+      path: "google177b6a95afeb25e4.html"
+    values: 
+      sitemap: false 
+  - scope: 
+      path: "pinterest-d5878.html"
+    values: 
+      sitemap: false 
+  - scope: 
+      path: "page3"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "page4"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "page5"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "index.html"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "tutorials.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "c-threading-tutorial.md"
+    values: 
+      sitemap: false  
+  - scope: 
+      path: "multithreading-in-csharp/index.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "multithreading-in-csharp/threads-in-csharp-overview.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "multithreading-in-csharp/getting-started-with-thread-class-in-csharp.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "thread-synchronization-in-csharp/index.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "tasks-in-csharp/index.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "tasks-in-csharp/getting-started-with-csharp-task.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "multithreading-in-csharp/csharp-thread-lifetime-and-thread-shutdown-methods.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "tasks-in-csharp/programming-for-responsiveness.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "thread-synchronization-in-csharp/wait-based-synchronization-in-multithreading.md"
+    values: 
+      sitemap: false
+  - scope: 
+      path: "tasks-in-csharp/introduction-to-parallel-programming-using-csharp-tasks.md"
+    values: 
+      sitemap: false
+
+sass: {style: expanded}
+plugins: [jekyll-feed, jekyll-paginate, jekyll-sitemap, jekyll-redirect-from]
+
+tutorials:
+  - language: C#
+    courses:
+      - name: Introducing To .NET Framework
+        url: /introduction-to-dotnet-framework/
+        description: This article introduces the .NET Framework and links to additional resources. .NET (dot-net) is the name Microsoft gives to its general vision of the future of computing, the view being of a world in which many applications run in a distributed manner across the Internet.
+
+      - name: Getting Started With C#
+        url: /getting-started-with-csharp/
+        description: In this article we run through a standard 'hello world' example, with links to articles covering the different parts of the program.
+
+      - name: C# Variable Types
+        url: /csharp-variable-types/
+        description: In this article you will learn about defining types and declaring variables in C#.
+
+      - name: C# Pointer
+        url: /csharp-pointer/
+        description: A pointer is a variable that holds the memory address of another type. In C#, pointers can only be declared to hold the memory addresses of value types. This article gives a brief overview of pointers and their use in C#.
+
+      - name: "C# Array"
+        url: /csharp-array/
+        description: In this article, we will look at what an C# array is, how it is used, and what it can do. An array is a set of indexed elements where each has its own, unique identification number.
+
+      - name: "C# Enumerator"
+        url: /csharp-enumerator/
+        description: C# Enums or Enumeration is a special kind of value type limited to a restricted and unchangeable set of numerical values. An enumerated type is declared using the enum keyword.
+
+      - name: "C# Operator"
+        url: /csharp-operator/
+        description: C# Operators are symbols that tells the .NET CLR to perform specific operations on operands for producing the final result. This article explains the arithmetic, relational, logical, bitwise, assignment, and other c# operators one by one.
+
+      - name: "C# Loops"
+        url: /csharp-loops/
+        description: In this article, we will look at C# loops. Loops can be used to repeat parts of a code a specified number of times or until a certain condition is met.
+
+      - name: "C# Conditions"
+        url: /csharp-conditions/
+        description: In this article, we will look at C# conditional statements. Conditions are used to execute part of a code only if some predefined conditions are fulfilled.
+      
+      - name: "C# String"
+        url: /c-string/
+        description: C# String class represents a string data type. This tutorial explains strings in C# and how you can use strings in your .NET applications.
+
+      - name: "C# Object-Oriented Programming"
+        url: /csharp-object-oriented-programming/
+        description: Understanding and using object-oriented coding techniques is the key to building well-crafted C# applications. In this part of the C# tutorial, we will talk about object oriented programming in C#.
+
+      - name: "C# Class"
+        url: /csharp-class/
+        description: In this article we will learn very basic fundamental of OOPS programming that is classes and objects. Classes are a blueprint for creating individual objects that contain the general characteristics of a defined object type.
+
+      - name: "C# Methods"
+        url: /csharp-methods/
+        description: C# Methods are operations associated with types. To provide a type with methods is to give it some useful functionality. In this article you will learn different types of methods in C# language.
+
+      - name: "C# Polymorphism"
+        url: /csharp-polymorphism/
+        description: Polymorphism in C# relates to the choice of which method to call, where the declared class of a variable is different to the run-time class of the object it references. In this tutorial, you will learn about - inheritance polymorphism and runtime polymorphism in c#.
+
+      - name: "C# Fields, Properties and Indexers"
+        url: /csharp-fields-properties-and-indexers/
+        description: In this article, we will discuss about C# Fields, Properties and Indexers. A field is a variable which is declared directly in a class or struct in C#. A property is a member that provides a flexible mechanism to read, write, or compute the value of a private field.
+
+      - name: "Delegates And Events In C#"
+        url: /delegates-and-events-in-csharp/
+        description: "In C#, delegates form the basic building blocks for events. This article explains the implementation detail of Delegates and Events in C# .NET."
+
+      - name: "Generics In C#"
+        url: /generics-in-csharp/
+        description: "This article explains the Generics in C# with the help of a real-time problem and its step by step solution using generics. This article serves to be an in-depth post on getting started with generics in c#."
+
+      - name: "C# Multithreading"
+        url: /c-multithreading/
+        description: This course is a complete guide to Multithreading in C#. It explains Thread class, Thread synchronization techniques, and Task class provided by .NET for Asynchronous and Parallel Programming in C#.
+        course: multithreadingcsharp
+
+
+courses:
+    multithreadingcsharp: 
+      - title: "C# Multithreading"
+        url: /c-multithreading/
+        description: This article is a complete guide to Multithreading in C#. It explains Thread class, Thread synchronization techniques, and Task class provided by .NET for Asynchronous and Parallel Programming in C#.
+
+      - title: "C# Thread"
+        url: /multithreading-in-csharp/csharp-thread/
+        description: This article is a complete introduction to threading. It explains what is a thread and why it is used in programming. Threading enables your C# program to perform concurrent processing so that you can do more than one operation at a time.
+
+      - title: "C# Threadpool"
+        url: /multithreading-in-csharp/thread-pool-in-csharp/
+        description: This article explains how to use C# Threadpool. A thread pool is a collection of threads that can be used to perform several tasks in the background. This leaves the primary thread free to perform other tasks asynchronously.
+
+      - title: "Race Condition C#"
+        url: /thread-synchronization-in-csharp/thread-synchronization-and-race-condition/
+        description: This article explains what is Race Condition and Shared Resources in a multithreaded program and how much it is critical to synchronize a multithreaded program having shared resources.
+
+      - title: "C# Thread Synchronization"
+        url: /thread-synchronization-in-csharp/thread-synchronization-techniques/
+        description: This article explains techniques to tackle the thread synchronization problems and race condition. Thread synchronization refers to the act of shielding against multithreading issues such as data races, deadlocks and starvation.
+
+      - title: "C# Monitor"
+        url: /thread-synchronization-in-csharp/csharp-monitor/   
+        description: This article explains how to use Monitor Class in C#. Monitor and lock is the way to provide thread safety in a multithreaded application in C#. Monitor class is one of the wait based synchronization primitive that provides gated access to the shared resource.
+
+      - title: "C# Task"
+        url: /tasks-in-csharp/csharp-task/
+        description: This article serves to be a quick guide for using Tasks in C#. It discusses different methods to create tasks and handle their execution.
+
+      - title: "Async Await C#"
+        url: /tasks-in-csharp/async-await-c/
+        description: In this article, you'll learn what are async and await keywords in C#, and how to use async-await feature along with Task for asynchronous programming.
+      
+      - title: "Task Parallelism C#"
+        url: /tasks-in-csharp/task-parallelism-c/
+        description: In this article we will be discussing different methods to achieve parallelism using Tasks in C#.

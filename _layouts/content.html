@@ -1,0 +1,17 @@
+---
+layout: blank
+---
+<div id="main-content"> 
+  
+  <section>    
+    {{ content }}      
+  </section> 
+
+  <aside>
+  	{% if page.aside %}
+    {% include {{ page.aside }} %}
+    {% else %}
+    {% include default_aside.html %}
+    {% endif %}
+  </aside>
+</div>

@@ -1,0 +1,107 @@
+body
+  font-family: "Source Sans Pro"
+  font-weight: 300
+  font-size: 18px
+  line-height: 1.65
+  margin: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+a
+  color: inherit
+  text-decoration: inherit
+  transition: color .2s ease-out
+  &.selected, &:hover
+    color: reduce(100)
+  word-break: break-word
+
+a, b, strong, th
+  font-weight: 400
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 300
+
+main
+  flex-grow: 1
+
+article a
+  color: #68f
+
+header a, footer a
+  color: inherit
+  font-weight: 300
+
+hr
+  border: 1px solid reduce(16)
+  margin: 1em 0
+
+header span, header time
+  color: #949494
+
+blockquote
+  border-left: 5px solid #68f
+  padding-left: 1.5em
+  margin: 0
+
+body, main
+  flex-direction: column
+
+img
+  max-width: 100%
+  height: auto
+  border-radius: 2px
+  display: block
+  margin: auto
+
+figure
+  margin: 1em 0
+
+pre
+  -webkit-overflow-scrolling: touch
+  overflow-x: auto
+  display: block
+
+p, li
+  text-align: justify
+
+#main-content > section, body > header, body > footer
+  padding: 1em calc(12% - 5em)
+
+#main-content
+  display: flex
+  flex-direction: row
+
+#main-content section
+  flex: 3 1 65%
+  order: 1
+
+#main-content aside
+  flex: 2 6 35%
+  order: 2
+  position: sticky
+  position: -webkit-sticky
+  top: 0
+  align-self: flex-start
+  padding: 1em 0em
+  padding-right: calc(12% - 5em)
+
+@media all and (max-width: 992px) 
+
+  #main-content
+    flex-direction: column
+
+  #main-content > section, 
+  #main-content > aside
+    /* Return them to document order */
+    order: 0
+
+  #main-content section, body > header, body > footer
+    padding: 1em calc(20% - 4em)
+
+  #main-content aside
+    position: static
+    align-self: normal
+    padding: 1em calc(20% - 4em)
+
+.adsbygoogle
+    margin-bottom: 1em

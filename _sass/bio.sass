@@ -1,0 +1,53 @@
+#bio
+  .full-article-footer
+  border-top: 1px solid #E0DFDB
+
+  .article-footer
+    padding: 20px 10px 10px 10px
+    min-height: 115px
+    display: table
+
+  .avatar-module
+    display: table-cell
+    vertical-align: middle
+
+    img
+      border-radius: 50% !important
+      height: 120px
+      width: 120px
+      float: left
+      margin: 0px 20px 0px 20px
+      max-width: none
+
+  .article-footer p
+    line-height: 1.5em
+    padding-left: 15px
+
+  a.author-link
+    font-size: 25px
+    line-height: 2em
+    text-decoration: none
+
+    &:hover
+      color: #000000
+      text-decoration: none
+
+  @media (max-width: 750px)
+    .article-footer
+      display: inherit
+      margin: 0px
+
+    .avatar-module
+      display: inherit
+      vertical-align: none
+
+      img
+        margin-left: auto
+        margin-right: auto
+        display: block
+        float: none
+        margin-top: 0px
+
+    .article-footer p
+      text-align: center
+      padding-left: 0px

@@ -1,0 +1,21 @@
+{% assign author = site.data.authors[page.author] %}
+{% if author.bio %}
+
+<div id='bio' class="full-article-footer">
+     <div class="article-footer">
+        {% if author.image %}
+            <div class="avatar-module">
+                <img class="avatar" src="{{author.image}}">
+            </div>
+        {% endif %}
+        <p>Written by
+            <br>
+            <a class="author-link" href="{{ author.blog }}">{{author.name}}</a>
+            <br>
+            {{ author.bio }}
+        </p>
+    </div>
+</div>
+
+ 
+{% endif %}
