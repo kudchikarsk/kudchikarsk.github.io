@@ -154,7 +154,8 @@ Feel free to ask me questions by sending me a message on my [Instagram][Instagra
 -  [https://msdn.microsoft.com/en-us/magazine/mt493248.aspx](https://msdn.microsoft.com/en-us/magazine/mt493248.aspx)
 -  [https://www.geeksforgeeks.org/tuples-in-python/](https://www.geeksforgeeks.org/tuples-in-python/)
 -  [https://stackoverflow.com/questions/14518498/how-to-achieve-multiple-return-values-in-c-sharp-like-python-style](https://stackoverflow.com/questions/14518498/how-to-achieve-multiple-return-values-in-c-sharp-like-python-style)
-
+-  [https://www.scaler.com/topics/python/tuples-in-python/](https://www.scaler.com/topics/python/tuples-in-python/)
+	
 [post-image]: /images/python-code.jpg
 [tuples-csharp-article]: https://msdn.microsoft.com/en-us/magazine/mt493248.aspx
 [Instagram]: https://www.instagram.com/kudchikarsk
